@@ -49,25 +49,23 @@ cw = math.ceil((rawdata.max()-rawdata.min()) / 7)
 print("Class-Width:  ",cw,"\n")
 
 
-# Generate data on commute times.
-##histdata = pd.Series(rawdata)
+# Generate data on task release days\times.
+histdata = pd.Series(rawdata)
+
+histdata.plot.hist(grid=True, bins=7, rwidth=0.99,
+                   color='#607c8e')
+#
+# old plot settings
+#
+#histdata.plot.hist(grid=True, bins=10, rwidth=0.9, color='#607c8e')
+#histdata.plot.hist(grid=True, bins=10, color='#607c8e')
 
 
-#histdata.plot.hist(grid=True, bins=10, rwidth=0.9,
-#                   color='#607c8e')
-
-#histdata.plot.hist(grid=True, bins=10,
-#                   color='#607c8e')
-
-##histdata.plot.hist(grid=True, bins=7, rwidth=0.99,
-##                   color='#607c8e')
-
-
-##plt.title("KMP-2 Histogram for Exercise Data")
-##plt.xlabel("Counts")
-##plt.ylabel("Thing")
-##plt.grid(axis='y', alpha=0.75)
-##plt.show()
+plt.title("KMP-2 Histogram for Exercise Data")
+plt.xlabel("Counts")
+plt.ylabel("Thing")
+plt.grid(axis='y', alpha=0.75)
+plt.show()
 
 #https://www.tutorialspoint.com/numpy/numpy_statistical_functions.htm#:~:text=mean(),of%20elements%20in%20the%20array.
 
@@ -100,4 +98,3 @@ if (endseshnum==1):
 else:
 	print("exiting anyway ; )")
 	sys.exit()
-
